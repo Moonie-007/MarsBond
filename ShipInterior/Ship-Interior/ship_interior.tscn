@@ -1,0 +1,156 @@
+[gd_scene format=3 uid="uid://16dohaktftao"]
+
+[ext_resource type="Script" uid="uid://b4higoupyjwnw" path="res://ShipInterior/Ship-Interior/comm_screen.gd" id="1_hoslv"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_j1kn7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t80hv"]
+albedo_color = Color(0.22745098, 0.1882353, 0.15686275, 1)
+albedo_texture = SubResource("NoiseTexture2D_j1kn7")
+metallic = 0.7
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_e0pad"]
+material = SubResource("StandardMaterial3D_t80hv")
+size = Vector3(10, 0.2, 8)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6oss2"]
+albedo_color = Color(0.26666668, 0.26666668, 0.26666668, 1)
+albedo_texture = SubResource("NoiseTexture2D_j1kn7")
+metallic = 0.7
+roughness = 0.8
+
+[sub_resource type="BoxMesh" id="BoxMesh_px22c"]
+material = SubResource("StandardMaterial3D_6oss2")
+size = Vector3(10, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_8tjyx"]
+material = SubResource("StandardMaterial3D_6oss2")
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7wqe7"]
+material = SubResource("StandardMaterial3D_6oss2")
+size = Vector3(0.2, 3, 8)
+
+[sub_resource type="BoxMesh" id="BoxMesh_p4wj3"]
+material = SubResource("StandardMaterial3D_6oss2")
+size = Vector3(10, 3, 0.2)
+
+[sub_resource type="BoxMesh" id="BoxMesh_doq4v"]
+material = SubResource("StandardMaterial3D_6oss2")
+size = Vector3(10, 0.1, 8)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_doq4v"]
+
+[sub_resource type="Sky" id="Sky_p4wj3"]
+sky_material = SubResource("ProceduralSkyMaterial_doq4v")
+
+[sub_resource type="Environment" id="Environment_e0pad"]
+background_mode = 2
+sky = SubResource("Sky_p4wj3")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_px22c"]
+albedo_color = Color(0, 0, 0, 1)
+emission_enabled = true
+emission = Color(0.13333334, 0.26666668, 0.4, 1)
+emission_energy_multiplier = 0.0
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_e0pad"]
+material = SubResource("StandardMaterial3D_px22c")
+size = Vector2(1.5, 1)
+
+[sub_resource type="Gradient" id="Gradient_sg76l"]
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_e0pad"]
+gradient = SubResource("Gradient_sg76l")
+
+[sub_resource type="AudioStreamMP3" id="AudioStreamMP3_e0pad"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e0pad"]
+size = Vector3(3, 2, 2)
+
+[node name="ShipInterior" type="Node3D" unique_id=172390761]
+
+[node name="Floor" type="MeshInstance3D" parent="." unique_id=238909141]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.015853405, 0)
+mesh = SubResource("BoxMesh_e0pad")
+
+[node name="Back_Wall" type="MeshInstance3D" parent="." unique_id=1133343447]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, -4)
+mesh = SubResource("BoxMesh_px22c")
+
+[node name="Left_Wall" type="MeshInstance3D" parent="." unique_id=331215065]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5, 1.5, 0)
+mesh = SubResource("BoxMesh_8tjyx")
+
+[node name="Right_Wall" type="MeshInstance3D" parent="." unique_id=1658577480]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5, 1.5, 0)
+mesh = SubResource("BoxMesh_7wqe7")
+
+[node name="Front_Wall" type="MeshInstance3D" parent="." unique_id=201494099]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 4)
+mesh = SubResource("BoxMesh_p4wj3")
+
+[node name="Roof" type="MeshInstance3D" parent="." unique_id=1078244997]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_doq4v")
+
+[node name="MainLight" type="OmniLight3D" parent="." unique_id=968833648]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.5, 0)
+light_color = Color(1, 0.6666667, 0.4, 1)
+light_energy = 0.5
+
+[node name="EmergencyLight" type="OmniLight3D" parent="." unique_id=72861947]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3, 2, 2)
+light_color = Color(1, 0.2, 0.2, 1)
+light_energy = 0.2
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=1502253697]
+environment = SubResource("Environment_e0pad")
+
+[node name="CommScreen" type="Node3D" parent="." unique_id=1897290679]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.6, 3.8)
+script = ExtResource("1_hoslv")
+
+[node name="ScreenMesh" type="MeshInstance3D" parent="CommScreen" unique_id=1510850286]
+mesh = SubResource("PlaneMesh_e0pad")
+
+[node name="ScreenViewport" type="SubViewport" parent="CommScreen" unique_id=1926570467]
+transparent_bg = true
+size = Vector2i(400, 300)
+render_target_update_mode = 4
+
+[node name="Camera2D" type="Camera2D" parent="CommScreen/ScreenViewport" unique_id=123218773]
+
+[node name="CallUI" type="Control" parent="CommScreen/ScreenViewport" unique_id=283179701]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 400.0
+offset_bottom = 300.0
+
+[node name="MsgLabel" type="Label" parent="CommScreen/ScreenViewport/CallUI" unique_id=1197587907]
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 300.0
+theme_override_colors/font_color = Color(0.26666668, 1, 0.53333336, 1)
+theme_override_font_sizes/font_size = 24
+text = "Signal Lost . . ."
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StaticOverlay" type="TextureRect" parent="CommScreen/ScreenViewport/CallUI" unique_id=379579651]
+visible = false
+layout_mode = 0
+offset_right = 400.0
+offset_bottom = 300.0
+texture = SubResource("GradientTexture2D_e0pad")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="CommScreen" unique_id=907589628]
+stream = SubResource("AudioStreamMP3_e0pad")
+attenuation_model = 1
+max_distance = 5.0
+
+[node name="ProximityArea" type="Area3D" parent="CommScreen" unique_id=626340760]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="CommScreen/ProximityArea" unique_id=1369119087]
+shape = SubResource("BoxShape3D_e0pad")
