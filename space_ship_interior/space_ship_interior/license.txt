@@ -1,0 +1,11 @@
+Model Information:
+* title:	Space Ship Interior
+* source:	https://sketchfab.com/3d-models/space-ship-interior-08f117102f2f4e48ab583b7ae22db1c1
+* author:	Ryley Burnett (https://sketchfab.com/ryleyburnett)
+
+Model License:
+* license type:	CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)
+* requirements:	Author must be credited. Commercial use is allowed.
+
+If you use this 3D model in your project be sure to copy paste this credit wherever you share it:
+This work is based on "Space Ship Interior" (https://sketchfab.com/3d-models/space-ship-interior-08f117102f2f4e48ab583b7ae22db1c1) by Ryley Burnett (https://sketchfab.com/ryleyburnett) licensed under CC-BY-4.0 (http://creativecommons.org/licenses/by/4.0/)

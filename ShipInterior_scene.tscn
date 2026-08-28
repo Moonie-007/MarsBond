@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://b4826oir07omj"]
+
+[ext_resource type="PackedScene" uid="uid://hd8x51j7de07" path="res://space_ship_interior/scene.gltf" id="1_3epqw"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7b306"]
+albedo_color = Color(1, 0.42334524, 0.13991573, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_okftl"]
+albedo_color = Color(0.2410649, 0.47491008, 0.6578884, 1)
+
+[node name="Sketchfab_Scene" unique_id=864301438 instance=ExtResource("1_3epqw")]
+
+[node name="polySurface1_lambert1_0" parent="Sketchfab_model/e0bdc2d08a9c436986dd33d75fa9caf0_fbx/RootNode/polySurface1" parent_id_path=PackedInt32Array(1272957775) index="0" unique_id=2118758512]
+material_override = SubResource("StandardMaterial3D_7b306")
+
+[node name="polySurface1_lambert1_02" parent="Sketchfab_model/e0bdc2d08a9c436986dd33d75fa9caf0_fbx/RootNode/polySurface1" parent_id_path=PackedInt32Array(1272957775) index="1" unique_id=237469190]
+material_override = SubResource("StandardMaterial3D_okftl")
