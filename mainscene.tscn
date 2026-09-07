@@ -1,0 +1,147 @@
+[gd_scene format=3 uid="uid://bdkm31ipe0h8s"]
+
+[ext_resource type="PackedScene" uid="uid://bhrm0nm6s2ike" path="res://mars/mars.tscn" id="1_xtb1e"]
+[ext_resource type="PackedScene" uid="uid://d3yam1v3f6cms" path="res://main.tscn" id="2_dn5c8"]
+[ext_resource type="Script" uid="uid://ds2lncd8by4xy" path="res://waking_animation.gd" id="3_dn5c8"]
+[ext_resource type="Script" uid="uid://dc2g002ts78jr" path="res://msg_1.gd" id="4_5lfti"]
+[ext_resource type="FontFile" uid="uid://cuaiogrqfdcyl" path="res://minecraftia/Minecraftia-Regular.ttf" id="4_sbvtr"]
+[ext_resource type="Script" uid="uid://dko4jfbx85swy" path="res://day_night.gd" id="6_fl65m"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_e0pad"]
+font_size = 70
+font_color = Color(0, 0.97769874, 0.7882106, 1)
+
+[sub_resource type="Animation" id="Animation_5lfti"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DayText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_sbvtr"]
+resource_name = "wake_animation"
+length = 4.0
+step = 4.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("FadeScreen:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("DayText:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.001, 2, 3),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_fl65m"]
+_data = {
+&"RESET": SubResource("Animation_5lfti"),
+&"wake_animation": SubResource("Animation_sbvtr")
+}
+
+[sub_resource type="LabelSettings" id="LabelSettings_px22c"]
+font = ExtResource("4_sbvtr")
+font_size = 34
+font_color = Color(0.6903349, 0.9136882, 1.540184e-06, 1)
+shadow_size = 0
+shadow_color = Color(0.16034175, 1.0780712, 0.859268, 1)
+
+[node name="Node3D" type="Node3D" unique_id=696702524]
+
+[node name="Mars" parent="." unique_id=1525028675 instance=ExtResource("1_xtb1e")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -37.768795, 0)
+
+[node name="CrashedShip2" parent="Mars" unique_id=841886217 instance=ExtResource("2_dn5c8")]
+
+[node name="WakeupPosition" type="Marker3D" parent="Mars" unique_id=1261763163]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -27.592274, 23.414906, -8.188051)
+
+[node name="WakeUpUI" type="CanvasLayer" parent="." unique_id=688983188]
+
+[node name="FadeScreen" type="ColorRect" parent="WakeUpUI" unique_id=1612948955]
+offset_right = 1155.0
+offset_bottom = 681.0
+color = Color(0, 0, 0, 1)
+
+[node name="DayText" type="Label" parent="WakeUpUI" unique_id=552512508]
+offset_left = 2.0
+offset_right = 1130.0
+offset_bottom = 668.0
+text = "DAY 1
+"
+label_settings = SubResource("LabelSettings_e0pad")
+horizontal_alignment = 1
+vertical_alignment = 1
+text_overrun_behavior = 2
+
+[node name="WakingAnimation" type="AnimationPlayer" parent="WakeUpUI" unique_id=891152365]
+libraries/ = SubResource("AnimationLibrary_fl65m")
+script = ExtResource("3_dn5c8")
+
+[node name="Msg1" type="Label" parent="WakeUpUI" unique_id=49399422]
+offset_left = 14.0
+offset_top = 347.0
+offset_right = 1154.0
+offset_bottom = 659.0
+theme_override_font_sizes/font_size = 35
+text = "The spaceship has
+ crashed on Mars.
+You are the only 
+survivor."
+label_settings = SubResource("LabelSettings_px22c")
+horizontal_alignment = 1
+vertical_alignment = 1
+script = ExtResource("4_5lfti")
+typing_speed = 0.1
+
+[node name="Sun" type="DirectionalLight3D" parent="." unique_id=1164322799]
+transform = Transform3D(0.8660254, 0.3596699, -0.3473292, 0, 0.6946584, 0.7193398, 0.5, -0.6229665, 0.6015918, 0, 0, 0)
+shadow_enabled = true
+
+[node name="DayNight" type="Node" parent="." unique_id=1133767486 node_paths=PackedStringArray("sun", "night_message")]
+script = ExtResource("6_fl65m")
+sun = NodePath("../Sun")
+night_message = NodePath("CanvasLayer/Label")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="DayNight" unique_id=1666272180]
+
+[node name="Label" type="Label" parent="DayNight/CanvasLayer" unique_id=731850466]
+offset_right = 40.0
+offset_bottom = 23.0
+theme_override_colors/font_color = Color(0.40848407, 0.65733343, 0.032525606, 1)
+theme_override_fonts/font = ExtResource("4_sbvtr")
+theme_override_font_sizes/font_size = 21

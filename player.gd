@@ -5,6 +5,7 @@ extends CharacterBody3D
 @export var mouse_sensitivity := 0.002
 
 
+
 func _ready():
 	Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 

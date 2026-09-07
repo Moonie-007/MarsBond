@@ -5,12 +5,13 @@
 [ext_resource type="Script" uid="uid://dpo8al0rmb61r" path="res://screen.gd" id="2_1bvp3"]
 [ext_resource type="Script" uid="uid://c8tdey841l4u2" path="res://player.gd" id="2_h2yge"]
 [ext_resource type="PackedScene" uid="uid://dmyuxa1nrehku" path="res://low_poly_spaceship_or_airplane_door/scene.gltf" id="5_lquwl"]
+[ext_resource type="Script" uid="uid://cqn11i3rcf72j" path="res://low_poly_spaceship_or_airplane_door/scene.gd" id="6_7mycd"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_e0pad"]
 size = Vector3(87.63177, 3.5890236, 30.344116)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_1bvp3"]
-albedo_color = Color(1.192, 1.226, 1.256, 1)
+albedo_color = Color(1.5534062, 1.2933704, 1.3094362, 1)
 disable_receive_shadows = true
 
 [sub_resource type="BoxMesh" id="BoxMesh_e0pad"]
@@ -104,22 +105,22 @@ transform = Transform3D(0.9999924, 0, -0.00391249, 0, 1, 0, 0.00391249, 0, 0.999
 mesh = SubResource("BoxMesh_e0pad")
 
 [node name="Wall_right" type="MeshInstance3D" parent="Ship/Walls" unique_id=1455532515]
-transform = Transform3D(1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 53.6166, 12.730736, 1.1653051)
+transform = Transform3D(1.0000001, 0, 0, 0, 0.9999999, 0, 0, 0, 1, 53.6166, 55.95006, 1.1653051)
 mesh = SubResource("BoxMesh_h2yge")
 
 [node name="Wall_Back" type="MeshInstance3D" parent="Ship/Walls" unique_id=951313636]
-transform = Transform3D(0.99989355, -0.003975313, 0.0122362925, -0.0081467265, -0.4999189, 0.016060563, 0.012106617, -0.008079269, -0.99979615, 6.6056347, 12.952157, 11.5735445)
+transform = Transform3D(0.99989355, -0.003975313, 0.0122362925, -0.0081467265, -0.4999189, 0.016060563, 0.012106617, -0.008079269, -0.99979615, 6.6056347, 13.114663, 69.839966)
 mesh = SubResource("BoxMesh_px22c")
 
 [node name="Sketchfab_Scene" parent="Ship" unique_id=864301438 instance=ExtResource("1_h2yge")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12457657, 5.2227325, 0.91272736)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.12457657, 4.456377, 0.91272736)
 
 [node name="Player" type="CharacterBody3D" parent="Ship" unique_id=681569621]
 transform = Transform3D(1.075, 0, 0, 0, 1.075, 0, 0, 0, 1.075, 0, 0.2501049, 0)
 script = ExtResource("2_h2yge")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Ship/Player" unique_id=394742870]
-transform = Transform3D(0.99997735, -0.006138275, 0.0027284345, 0.006131575, 0.9999781, 0.0024559868, -0.0027434577, -0.0024391937, 0.9999932, -0.53581226, 23.697924, 0.17636463)
+transform = Transform3D(0.99997735, -0.006138273, 0.0027284345, 0.0061315736, 0.9999781, 0.0024559859, -0.0027434567, -0.0024391937, 0.9999932, 2.8492818, 12.138727, 1.2268684)
 shape = SubResource("CapsuleShape3D_h2yge")
 
 [node name="Sketchfab_Scene" parent="Ship/Player" unique_id=1674019516 instance=ExtResource("2_0xm2m")]
@@ -127,7 +128,7 @@ transform = Transform3D(0.99989283, 0.01455467, -0.0014457763, -0.014552695, 0.9
 visible = false
 
 [node name="Camera3D" type="Camera3D" parent="Ship/Player" unique_id=1963762506]
-transform = Transform3D(0.93023247, -1.4086592e-10, -3.2797918e-20, 1.4086592e-10, 0.93023247, 2.1658672e-10, 0, -2.1658672e-10, 0.93023247, 0, 25.41992, -1.6747357)
+transform = Transform3D(0.93023247, -1.4086592e-10, -3.2797918e-20, 1.4086592e-10, 0.93023247, 2.1658672e-10, 0, -2.1658672e-10, 0.93023247, 5.4565845, 12.152334, -1.6747353)
 fov = 67.5
 
 [node name="InteractionRay" type="RayCast3D" parent="Ship/Player/Camera3D" unique_id=220316849]
@@ -137,11 +138,11 @@ target_position = Vector3(0, 0, -3)
 collide_with_areas = true
 
 [node name="ShipShape" type="MeshInstance3D" parent="Ship" unique_id=1125957614]
-transform = Transform3D(0.013962129, -0.99990255, -3.4921194e-11, 0.99929345, 0.013953624, -0.041879397, 0.034896094, 0.00048727123, 1.199269, 8.3060465, 17.467054, -0.23524761)
+transform = Transform3D(0.013962129, -0.99990255, -3.4921194e-11, 0.99929345, 0.013953624, -0.041879397, 0.034896094, 0.00048727123, 1.199269, 8.3060465, 53.12024, -0.23524761)
 mesh = SubResource("TubeTrailMesh_px22c")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=1920870413]
-transform = Transform3D(1, 0, 0, 0, 0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, 0, 27.87466, 0)
+transform = Transform3D(1, 0, 0, 0, 0.9945219, 0.104528464, 0, -0.104528464, 0.9945219, -47, 17.87466, -21)
 light_color = Color(0.73832005, 0.6952, 0.88, 1)
 light_energy = 1.387
 
@@ -187,17 +188,56 @@ SYSTEM ONLINE
 
 All systems operational."
 
-[node name="Door2" parent="." unique_id=1165214016 instance=ExtResource("5_lquwl")]
+[node name="Door" parent="." unique_id=1165214016 instance=ExtResource("5_lquwl")]
 transform = Transform3D(-0.102175735, 0, 4.998956, 0, 5, 0, -4.998956, 0, -0.102175735, 37.54208, 6.1070824, 2.8032804)
+script = ExtResource("6_7mycd")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="Door2" unique_id=1293790360]
+[node name="StaticBody3D" type="StaticBody3D" parent="Door" unique_id=1293790360]
 transform = Transform3D(1.0000001, 0, 0, 0, 1.0000001, 0, 0, 0, 1.0000001, 0, -0.3072163, 0)
 
-[node name="Area3D" type="Area3D" parent="Door2/StaticBody3D" unique_id=787963928]
+[node name="Area3D" type="Area3D" parent="Door/StaticBody3D" unique_id=787963928]
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="Door2/StaticBody3D/Area3D" unique_id=965646966]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Door/StaticBody3D/Area3D" unique_id=965646966]
 transform = Transform3D(1, -1.2331005e-06, 3.6135316e-07, 1.2331865e-06, 1.0000001, -6.0334798e-05, -3.6135316e-07, 6.0334114e-05, 1, -0.17749369, 1.3307571, 1.0920992)
 shape = SubResource("BoxShape3D_px22c")
 
 [node name="shipExitPoint" type="Marker3D" parent="." unique_id=311884856]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.593, 20.50581, 0)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="." unique_id=1181424312]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.18446, 17.439478, -7.854191)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D11" type="OmniLight3D" parent="." unique_id=354270354]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.797916, 17.439478, 3.6129236)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D10" type="OmniLight3D" parent="." unique_id=2000647094]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.048168, 17.439478, -22.879526)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+omni_range = 2.6909192
+
+[node name="OmniLight3D8" type="OmniLight3D" parent="." unique_id=1596201528]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 10.055191, 20.439478, 5.5968056)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D7" type="OmniLight3D" parent="." unique_id=1831953959]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.007004, 17.439478, 11.743483)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D6" type="OmniLight3D" parent="." unique_id=1223973475]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 56.95283, 17.439478, 7.963705)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="." unique_id=855683921]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.474148, 16.86091, -9.3817425)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="." unique_id=1410248202]
+transform = Transform3D(1, 0, 0, 0, 0.3, 0, 0, 0, 1, 10.570953, 17.439478, -7.854191)
+light_color = Color(1, 0.85490197, 0.41960785, 1)
+omni_range = 32.188526
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="." unique_id=1861923418]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -32.394764, 17.439478, -7.854191)
+light_color = Color(1, 0.85490197, 0.41960785, 1)

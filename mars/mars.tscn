@@ -4,12 +4,14 @@
 [ext_resource type="PackedScene" uid="uid://d3yam1v3f6cms" path="res://main.tscn" id="2_d5svr"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5dlo"]
-albedo_color = Color(3.0485291, 1.6512055, 0.8422288, 1)
+albedo_color = Color(0.9225504, 0.5293682, 0.30173638, 1)
 albedo_texture = ExtResource("1_d5svr")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rqw60"]
+albedo_color = Color(6.679772, 2.1971078, 2.1971078, 1)
 albedo_texture = ExtResource("1_d5svr")
-metallic = 0.3
+metallic_specular = 1.0
+roughness = 0.0
 roughness_texture = ExtResource("1_d5svr")
 
 [sub_resource type="PlaneMesh" id="PlaneMesh_e0pad"]
@@ -17,7 +19,7 @@ material = SubResource("StandardMaterial3D_rqw60")
 size = Vector2(3000, 3000)
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mqynk"]
-albedo_color = Color(1, 0.77, 0.53999996, 1)
+albedo_color = Color(0.4876434, 0.26938587, 0.14302625, 1)
 albedo_texture = ExtResource("1_d5svr")
 metallic = 0.3
 metallic_specular = 0.0
@@ -49,7 +51,7 @@ size = Vector3(16.69751, 1, 19.616486)
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_8tjyx"]
 cull_mode = 2
 shading_mode = 0
-albedo_color = Color(0.050702628, 0.046964318, 0.121730156, 1)
+albedo_color = Color(0.14428331, 0.14299999, 0.22, 1)
 
 [sub_resource type="SphereMesh" id="SphereMesh_px22c"]
 radius = 3000.0
